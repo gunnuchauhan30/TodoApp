@@ -1,0 +1,16 @@
+{
+  "name": "taskflow-monorepo",
+  "private": true,
+  "version": "2.0.0",
+  "scripts": {
+    "prepare": "husky || true",
+    "lint": "npm --prefix backend run lint && npm --prefix frontend run lint",
+    "test": "npm --prefix backend test",
+    "format": "npm --prefix backend run format && npm --prefix frontend run format"
+  },
+  "devDependencies": { "husky": "^9.0.11", "lint-staged": "^15.2.2" },
+  "lint-staged": {
+    "backend/src/**/*.ts": ["prettier --check"],
+    "frontend/src/**/*.{ts,tsx}": ["prettier --check"]
+  }
+}
